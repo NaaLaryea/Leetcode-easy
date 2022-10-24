@@ -34,31 +34,27 @@ def fizz_buzz(n)
   fizz_buzz_array
 end
 
-p fizz_buzz(50)
-
-
+p fizz_buzz(45)
 
 # SOLUTION TWO
 
 # @param {Integer} n
 # @return {String[]}
 def fizz_buzz(n)
-  fizz_buzz_array = []
-  for i in 1..n do
-    if i % 3 == 0 and i % 5 != 0
-      string = "Fizz"
-    elsif i % 5 == 0 and i % 3 != 0
-      string =  "Buzz"
-    elsif i % 3 == 0 and i % 5 == 0
-      string =  "FizzBuzz"
-    else
-      string = i.to_s
-    end
-    fizz_buzz_array << string
+  fizz_buzz_array = (1..n).map do |i|
+    string =
+      if (i % 3).zero? && i % 5 != 0
+        'Fizz'
+      elsif (i % 5).zero? && i % 3 != 0
+        'Buzz'
+      elsif (i % 3).zero? && (i % 5).zero?
+        'FizzBuzz'
+      else
+        i.to_s
+      end
   end
-  return fizz_buzz_array
+  fizz_buzz_array
 end
 
-p fizz_buzz(50)
-
-# SOLUTION TWO HAD A LOWER RUNTIME THAN SOLUTION ONE
+p fizz_buzz(45)
+# SOLUTION TWO HAD A HIGHER RUNTIME THAN SOLUTION ONE
