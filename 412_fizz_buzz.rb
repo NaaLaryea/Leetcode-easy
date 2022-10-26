@@ -42,16 +42,15 @@ p fizz_buzz(45)
 # @return {String[]}
 def fizz_buzz(n)
   fizz_buzz_array = (1..n).map do |i|
-    string =
-      if (i % 3).zero? && i % 5 != 0
-        'Fizz'
-      elsif (i % 5).zero? && i % 3 != 0
-        'Buzz'
-      elsif (i % 3).zero? && (i % 5).zero?
-        'FizzBuzz'
-      else
-        i.to_s
-      end
+    if (i % 3).zero? && i % 5 != 0
+      'Fizz'
+    elsif (i % 5).zero? && i % 3 != 0
+      'Buzz'
+    elsif (i % 3).zero? && (i % 5).zero?
+      'FizzBuzz'
+    else
+      i.to_s
+    end
   end
   fizz_buzz_array
 end

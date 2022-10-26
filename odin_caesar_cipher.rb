@@ -7,10 +7,10 @@ def caesar_cipher(string, key)
     if !(lower_letters + upper_letters).include?(character)
       character = character
     elsif character.downcase == character
-      index = (lower_letters.index(character.to_s) + 5) % 26
+      index = (lower_letters.index(character.to_s) + key) % 26
       lower_letters[index]
     elsif character.upcase == character
-      index = (upper_letters.index(character.to_s) + 5) % 26
+      index = (upper_letters.index(character.to_s) + key) % 26
       upper_letters[index]
     end
   end
